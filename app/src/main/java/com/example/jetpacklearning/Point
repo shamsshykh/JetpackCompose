@@ -1,0 +1,3 @@
+RE Composition -> when state change it will recreate the UI
+compose auto check if data change it will auto re create the compose.
+
