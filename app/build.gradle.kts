@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
@@ -57,4 +58,12 @@ dependencies {
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
+    // Navigation
+    implementation(libs.navigation.compose)
+    implementation(libs.androidx.navigation.common.ktx)
+    implementation(libs.serialization.json)
+    // animation
+    implementation("com.google.accompanist:accompanist-navigation-animation:0.36.0")
+
+
 }
