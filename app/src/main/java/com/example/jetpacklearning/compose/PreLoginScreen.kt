@@ -1,12 +1,18 @@
 package com.example.jetpacklearning.compose
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
-import androidx.navigation.NavHostController
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 
 
 @Composable
@@ -15,17 +21,22 @@ fun LoginScreen(
     onForgotClick: () -> Unit,
     onRegisterClick: () -> Unit
 ) {
-    Column {
-        Button(onClick = onLoginSuccess) {
-            Text("Login")
-        }
-        TextButton(onClick = onForgotClick) {
-            Text("Forgot Password")
-        }
-        TextButton(onClick = onRegisterClick) {
-            Text("Register")
+    Scaffold { paddingValues ->
+        Column(horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center,
+            modifier = Modifier.fillMaxSize().padding(paddingValues)) {
+            Button(modifier = Modifier.fillMaxWidth(), onClick = onLoginSuccess) {
+                Text("Login")
+            }
+            TextButton(onClick = onForgotClick) {
+                Text("Forgot Password")
+            }
+            TextButton(onClick = onRegisterClick) {
+                Text("Register")
+            }
         }
     }
+
 }
 
 
@@ -40,18 +51,6 @@ fun ForgotPasswordScreen(
         }
     }
 }
-
-@Composable
-fun ChangeEmailScreen(
-    onDone: () -> Unit,
-) {
-    Column {
-        Button(onClick = onDone) {
-            Text("onBack")
-        }
-    }
-}
-
 @Composable
 fun RegisterScreen(
     onRegisterSuccess: () -> Unit

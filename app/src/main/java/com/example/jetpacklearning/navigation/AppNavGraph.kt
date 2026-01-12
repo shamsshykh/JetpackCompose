@@ -11,7 +11,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 
 @Composable
-fun AppNavGraph(navController: NavHostController, isLoggedIn: Boolean, modifier: Modifier) {
+fun AppNavGraph(navController: NavHostController, isLoggedIn: Boolean, modifier: Modifier = Modifier) {
 
     NavHost(
         navController = navController,

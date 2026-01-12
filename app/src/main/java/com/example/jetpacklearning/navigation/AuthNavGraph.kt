@@ -9,7 +9,6 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
-import com.example.jetpacklearning.compose.ChangeEmailScreen
 import com.example.jetpacklearning.compose.ForgotPasswordScreen
 import com.example.jetpacklearning.compose.LoginScreen
 import com.example.jetpacklearning.compose.RegisterScreen
@@ -55,12 +54,6 @@ fun NavGraphBuilder.authNavGraph(
                         popUpTo(AuthGraph) { inclusive = true }
                     }
                 }
-            )
-        }
-
-        composable<EmailChangeRoute> {
-            ChangeEmailScreen(
-                onDone = { navController.popBackStack() }
             )
         }
     }
