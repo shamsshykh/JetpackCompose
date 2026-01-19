@@ -20,12 +20,7 @@ fun NavGraphBuilder.authNavGraph(
         startDestination = LoginRoute
     ) {
 
-        composable<LoginRoute>(
-            enterTransition = { fadeIn(animationSpec = tween(300)) },
-            exitTransition = { fadeOut(animationSpec = tween(300)) },
-            popEnterTransition = { slideInHorizontally { it } },
-            popExitTransition = { slideOutHorizontally { -it } }
-        ) {
+        composable<LoginRoute> {
             LoginScreen(
                 onLoginSuccess = {
                     navController.navigate(MainGraph) {
